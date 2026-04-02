@@ -1,0 +1,27 @@
+# --- Python 관련 ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- 가상환경 (가장 중요!) ---
+# venv 폴더는 용량이 크고 환경마다 다르므로 절대 올리지 않습니다.
+venv/
+env/
+ENV/
+
+# --- IDE 관련 (VS Code, PyCharm 등) ---
+.vscode/
+.idea/
+
+# --- 운영체제 관련 ---
+.DS_Store
+Thumbs.db
+
+# --- 로그 및 텍스트 데이터 ---
+# 강사님이 쓰시는 메모나 실행 로그 파일 제외
+app.log
+*.log
+
+# --- 로컬 환경 설정 (선택 사항) ---
+# 나중에 DB 비번 등을 담을 .env 파일을 만든다면 포함하세요.
+.env

@@ -1,0 +1,29 @@
+# 가상환경 구성
+python3 -m venv venv
+# 가상환경 활성화
+source venv/bin/activate
+
+# 1. pip upgrade
+python3 -m pip install --upgrade pip
+
+# 2. FastAPI 본체와 웹 서버(Uvicorn)
+pip install fastapi uvicorn
+
+# 3. 템플릿 엔진 (Jinja2)
+pip install jinja2
+
+# 4. DB 연결 도구 (SQLAlchemy와 PostgreSQL 드라이버)
+pip install sqlalchemy psycopg2-binary
+
+# 5. 실행
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+# 6. 백그라운드 실행 (로그는 app.log에 기록)
+nohup python -m uvicorn main:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
+
+# 8000번 포트를 사용하는 프로세스 죽이기
+fuser -k 8000/tcp
+
+# 또는 프로세스 ID(PID) 찾아서 죽이기
+ps -ef | grep uvicorn
+kill -9 [PID번호]
