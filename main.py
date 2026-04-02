@@ -37,6 +37,6 @@ def home(request: Request, db: Session = Depends(get_db)):
     
     return templates.TemplateResponse("index.html", {
         "request": request,
-        "fortuneToday": "동쪽으로 가면 귀인을 만나요",
+        "fortuneToday": "동쪽으로 가면 귀인을 만나요zzz",
         "posts": posts
     })
